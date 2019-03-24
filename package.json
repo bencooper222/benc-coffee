@@ -8,7 +8,8 @@
     "datalint": "eslint data.ts",
     "datalint:fix": "eslint data.ts --fix",
     "start": "parcel src/index.html",
-    "buildData": "parcel build ./data/buildData.ts --out-dir ./data --out-file ./buildData.js --no-source-maps --no-cache --target node && node ./data/buildData.js && rm -rf ./data/buildData.js ./data/tempImages"
+    "buildData": "parcel build ./data/buildData.ts --out-dir ./data --out-file ./buildData.js --no-source-maps --no-cache --target node && node ./data/buildData.js && rm -rf ./data/buildData.js ./data/tempImages",
+    "build": "npm run buildData && parcel build src/index.html"
   },
   "author": "Benjamin Cooper",
   "license": "See LICENSE in LICENSE.MD",
