@@ -1,0 +1,12 @@
+{
+  "plugins": ["prettier", "typescript", "sort-keys-fix"],
+  "rules": {
+    "sort-keys-fix/sort-keys-fix": 2,
+    "prettier/prettier": 2
+  },
+  "parserOptions": {
+    "ecmaFeatures": { "modules": true },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  }
+}

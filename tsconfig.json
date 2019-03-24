@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["dom", "es2015"],
+    "rootDir": "./src",
+    "outFile": "buildData.js",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
