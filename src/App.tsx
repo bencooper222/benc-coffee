@@ -7,8 +7,8 @@ const App = () => {
   return (
     <Container style={{ margin: 5 }}>
       <Card.Group>
-        {Array.from(coffee).map(shop => (
-          <ShopCard {...shop} />
+        {Array.from(coffee).map((shop, i) => (
+          <ShopCard key={i} {...shop} />
         ))}
       </Card.Group>
     </Container>

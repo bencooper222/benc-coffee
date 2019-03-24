@@ -76,7 +76,7 @@ typings/
 .fusebox/
 
 # data file
-./data/coffee.json
+data/coffee.json
 
 # prod build
 dist/
