@@ -8,7 +8,7 @@
     "datalint": "eslint data.ts",
     "datalint:fix": "eslint data.ts --fix",
     "start": "parcel src/index.html",
-    "buildData": "parcel build ./data/buildData.ts --out-dir ./data --out-file ./buildData.js --no-source-maps --no-cache --target node && node ./data/buildData.js && rm ./data/buildData.js"
+    "buildData": "parcel build ./data/buildData.ts --out-dir ./data --out-file ./buildData.js --no-source-maps --no-cache --target node && node ./data/buildData.js && rm -rf ./data/buildData.js ./data/tempImages"
   },
   "author": "Benjamin Cooper",
   "license": "See LICENSE in LICENSE.MD",
@@ -18,6 +18,10 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@material-ui/core": "^3.9.2",
     "fs-extra": "^7.0.1",
+    "imagemin": "^6.1.0",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-optipng": "^6.0.0",
+    "imagemin-pngquant": "^7.0.0",
     "parcel-bundler": "^1.12.3",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
@@ -28,6 +32,8 @@
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@types/fs-extra": "^5.0.5",
+    "@types/imagemin": "^6.0.0",
+    "@types/imagemin-jpegtran": "^5.0.0",
     "@types/node": "^11.11.6",
     "@types/node-fetch": "^2.1.7",
     "@types/react": "^16.8.8",

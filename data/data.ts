@@ -22,7 +22,7 @@ const coffee: Shop[] = [
     description:
       'A really nice coffee shop in an awkward location. Within a scooter ride of Vanderbilt.',
     image: new URL(
-      'https://static1.squarespace.com/static/50437f72c4aa994481345d33/506afbd884ae0e09c0a11d7d/58c005a0e3df28e544ec64df/1488979364141/DSCF5366.jpg',
+      'https://shared.benc.io/screencaps/2019/03/ea194cc6-9b22-4384-b15d-fe47eebd0399.png',
     ),
     location: '3431 Murphy Rd, Nashville, TN 37203',
     name: 'Dose Coffee',

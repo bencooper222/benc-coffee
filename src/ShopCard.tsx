@@ -1,9 +1,6 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChair } from '@fortawesome/free-solid-svg-icons';
-
-const iconStyle = { 'margin-left': '10px' };
+import IconScore from './IconScore';
 
 const ShopCard = (props: any) => (
   <Card>
@@ -16,14 +13,18 @@ const ShopCard = (props: any) => (
       <Card.Description>{props.description}</Card.Description>
     </Card.Content>
     <Card.Content extra>
-      <Icon style={iconStyle} name="coffee" />
+      <IconScore selector="coffee" data={props.vectorizedAttrs} />
+      <IconScore selector="wifi" data={props.vectorizedAttrs} />
+      <IconScore selector="seating" data={props.vectorizedAttrs} />
+      <IconScore selector="vibe" data={props.vectorizedAttrs} />
+      {/* <FontAwesomeIcon className="icon" fa-fw icon={faCoffee} />
       {props.vectorizedAttrs.coffee.score}
-      <FontAwesomeIcon transform="left-1" icon={faChair} />
+      <FontAwesomeIcon className="icon" icon={faChair} />
       {props.vectorizedAttrs.seating.score}
-      <Icon style={iconStyle} name="wifi" />
+      <FontAwesomeIcon className="icon" icon={faWifi} />
       {props.vectorizedAttrs.wifi.score}
-      <Icon style={iconStyle} name="fire" />
-      {props.vectorizedAttrs.vibe.score}
+      <FontAwesomeIcon className="icon" icon={faFire} />
+      {props.vectorizedAttrs.vibe.score} */}
     </Card.Content>
   </Card>
 );
