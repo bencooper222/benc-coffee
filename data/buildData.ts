@@ -4,7 +4,6 @@ import fetch from 'node-fetch';
 import * as states from 'us-state-codes';
 import imagemin from 'imagemin';
 import imageminJpegtran from 'imagemin-jpegtran';
-import imageminOptipng from 'imagemin-optipng';
 import imageminPngquant from 'imagemin-pngquant';
 
 (async () => {
@@ -13,20 +12,11 @@ import imageminPngquant from 'imagemin-pngquant';
     JSON.stringify(
       await Promise.all(
         coffee.map(async shop => {
-          const mapData = await fetch(
-            encodeURI(
-              `https://nominatim.openstreetmap.org/search?q=${
-                shop.location
-              }&format=json&addressdetails=1&`,
-            ),
-          );
-          const location = await mapData.json();
-
           const imageName = (a => a[a.length - 1])(shop.image.href.split('/'));
+
           await fs.mkdirp('./data/tempImages');
           const stream = fs.createWriteStream(`./data/tempImages/${imageName}`);
           await fetch(shop.image.href).then(async img => img.body.pipe(stream));
-
           await new Promise((res, rej) => {
             stream.on('finish', () => res());
             stream.on('error', () => rej());
@@ -41,7 +31,16 @@ import imageminPngquant from 'imagemin-pngquant';
               }),
             ],
           });
-          // await fs.writeFile('blah.jpg', buffer);
+
+          const mapData = await fetch(
+            encodeURI(
+              `https://nominatim.openstreetmap.org/search?q=${
+                shop.location
+              }&format=json&addressdetails=1&`,
+            ),
+          );
+          const location = await mapData.json();
+
           return {
             ...shop,
             image: `./images/${imageName}`,
