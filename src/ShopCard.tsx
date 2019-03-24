@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react';
+import { Card, Accordion, Image } from 'semantic-ui-react';
 import IconScore from './IconScore';
 
 const ShopCard = (props: any) => (
@@ -11,6 +11,17 @@ const ShopCard = (props: any) => (
         <span className="date">{props.location}</span>
       </Card.Meta>
       <Card.Description>{props.description}</Card.Description>
+      {/* <Accordion>
+        <Accordion.Title
+          active={activeIndex === 0}
+          index={0}
+          onClick={this.handleClick}
+        >
+          {' '}
+          Sup
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 0}>Hi</Accordion.Content>
+      </Accordion> */}
     </Card.Content>
     <Card.Content extra>
       <IconScore selector="coffee" data={props.vectorizedAttrs} />

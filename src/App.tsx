@@ -5,7 +5,7 @@ import coffee from '../data/coffee.json';
 
 const App = () => {
   return (
-    <Container style={{ margin: 5 }}>
+    <Container fluid={true} style={{ margin: 20 }}>
       <Card.Group>
         {Array.from(coffee).map((shop, i) => (
           <ShopCard key={i} {...shop} />
